@@ -1,0 +1,23 @@
+<!--NOTE: This was somewhat based on Cydney Auman's work on ComicVines-->
+<div ng-repeat="entry in shows">
+   <div class="row">
+      <div class="col-md-12 show-container">
+         <table>
+            <tr>
+               <td rowspan='2'>
+                  <img ng-src="{{entry.show.image.medium}}" alt="{{entry.show.name}}" class="show-img">
+               </td>
+               <td>
+                  <h2>{{entry.show.name}}</h2>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <p ng-bind-html="entry.show.summary | trustHTML"="{{entry.show.summary}}"></p>
+               </td>
+            </tr>
+         </table>
+         <hr >
+      </div>
+   </div>
+</div>

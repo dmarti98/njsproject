@@ -1,0 +1,32 @@
+<!-- NOTE: My homework assignment was heavily based on Prof. Auman's work: Comic Vine App -->
+<div class="search-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <form>
+               <p class="lead">Search for your Favorite TV Shows</p>
+               <div class="input-group">
+                  <input type="text" class="form-control input-md" ng-model="name" />
+                  <span class="input-group-btn">
+                  <button type="submit" class="btn btn-md btn-primary pull-right" ng-click="search()">
+                  search
+                  </button>
+                  </span>
+               </div>
+               <!-- If not entry is found, display "No results found" -->
+               <p ng-show="shows.length === 0">
+                  <em>No results found</em>
+               </p>
+            </form>
+         </div>
+      </div>
+      <div ng-if="shows.length" class="more-results-block">
+         <p>
+         <h2><i>Search Findings:</i></h2>
+         </p>
+         <hr/>
+         <!-- Displays results (My Custom Directive)-->
+         <show-preview></show-preview>
+      </div>
+   </div>
+</div>
